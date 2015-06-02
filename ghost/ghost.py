@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
-PY3 = sys.version > '3'
+PY3 = sys.version_info.major >= 3
 import os
 import time
 import uuid
@@ -1047,7 +1047,7 @@ class Ghost(object):
                 res, resources = self.click(selector)
                 Ghost._upload_file = None
         else:
-            raise Error('unsupported field tag')
+            raise Error('unsuported field tag')
 
         for event in ['input', 'change']:
             self.fire(selector, event);
